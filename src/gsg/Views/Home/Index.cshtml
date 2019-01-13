@@ -1,23 +1,87 @@
-﻿<div class="row justify-content-center">
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">секция А</button>
-        <button type="button" class="btn btn-secondary">секция Б</button>
-        <button type="button" class="btn btn-secondary">секция В</button>
+﻿<header class="mt-1" >
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('https://res.cloudinary.com/dydimitrov/image/upload/v1547385612/JsJ/rsz_1.jpg')">
+                <div class="carousel-caption d-none d-md-inline-block">
+                    <h3>Комплекс Джи Резиденс</h3>
+                    <p>Южна фасада</p>
+                </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://res.cloudinary.com/dydimitrov/image/upload/v1547385612/JsJ/rsz_4.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Комплекс Джи Резиденс</h3>
+                    <p>Източна фасада</p>
+                </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('https://res.cloudinary.com/dydimitrov/image/upload/v1547385612/JsJ/rsz_2.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Комплекс Джи Резиденс</h3>
+                    <p>Западна фасада</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://res.cloudinary.com/dydimitrov/image/upload/v1547385612/JsJ/rsz_3.jpg')">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Комплекс Джи Резиденс</h3>
+                    <p>Северна фасада</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Предишна</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Следваща</span>
+        </a>
     </div>
-    <div class="btn-group-justified">
-        <a class="btn btn-dark" href="#">секция А</a>
-        <a class="btn btn-dark" href="#">секция Б</a>
-        <a class="btn btn-dark" href="#">секция В</a>
-    </div>
-    <div class="row justify-content-center">
-        <img id="imageFasada" src="images/f3.jpeg" border="0" style="display: block; position: relative; left: 0px; padding: 0px; width: 1349px; height: 604.234px;" usemap="#fasada" alt=""/>
-        <map name="fasada" id="imageFasada">
-            <area shape="rect" coords="1347,602,1349,604" alt="Image Map" style="outline: none;" title="Image Map" href="#"/>
-            <area id="secA" alt="SectionA" title="SectionA" href="#" shape="poly" coords="45,137,136,359,272,497,507,415,501,374,631,328,603,94,513,48" style="outline: none;" target="_self"/>
-            <area id="secB" alt="SectionB" title="SectionB" href="#" shape="poly" coords="720,9,528,47,613,93,637,311,641,326,775,277,791,285,802,111,984,62,862,13" style="outline: none;" target="_self"/>
-            <area id="secV" alt="SectionV" title="SectionV" href="#" shape="poly" coords="973,66,815,108,803,312,894,365,895,398,1074,502,1247,425,1320,223,1136,133" style="outline: none;" target="_self"/>
-        </map>
+</header>
+
+<div class="container">
+    <h1 class="my-4">Вземете своето жилище сега в една от Нашите сгради</h1>
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Сграда А</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Вижте списък с жилищата</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Сграда Б</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Вижте списък с жилищата</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100">
+                <h4 class="card-header">Сграда В</h4>
+                <div class="card-body">
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Вижте списък с жилищата</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-
