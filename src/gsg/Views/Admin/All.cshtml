@@ -3,44 +3,48 @@
     ViewData["Title"] = "All";
 }
 
-<h2>All</h2>
+<div class="container mt-5">
+    <h2>All</h2>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Номер</th>
-            <th scope="col">Описание</th>
-            <th scope="col">Площ</th>
-            <th scope="col">Сграда</th>
-            <th scope="col">Статус</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var apartment in Model)
-        {
-        <tr>
-            <th scope="row">1</th>
-            <td>@apartment.Number</td>
-            <td>@apartment.Description</td>
-            <td>@apartment.Building</td>
-            @if (apartment.IsSold)
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Номер</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Площ</th>
+                <th scope="col">Сграда</th>
+                <th scope="col">Етаж</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var apartment in Model)
             {
-                <td>Продаден</td>
+            <tr>
+                <th scope="row">1</th>
+                <td>@apartment.Description</td>
+                <td>@apartment.Number</td>
+                <td>@apartment.Building</td>
+                <td>@apartment.Floor</td>
+                @if (apartment.IsSold)
+                {
+                    <td>Продаден</td>
+                }
+                else
+                {
+                    <td>Свободен</td>
+                }
+                @if (!apartment.IsSold)
+                {
+                    <td><button class="btn-group-xs btn-warning" asp-action="Edit">Продаден</button> <button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
+                }
+                else
+                {
+                    <td><button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
+                }
+            </tr>
             }
-            else
-            {
-                <td>Свободен</td>
-            }
-            @if (!apartment.IsSold)
-            {
-                <td><button class="btn-group-xs btn-warning" asp-action="Edit">Продаден</button> <button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
-            }
-            else
-            {
-                <td><button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
-            }
-        </tr>
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

@@ -2,50 +2,60 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<div class="col-3"></div>
-<div class="col-6">
-    <h2 style="text-align:center">Добави Апартамент</h2>
-    <hr />
-    <form asp-action="Create" method="post">
-        <div class="form-group">
-            <label asp-for="Number">Номер на апартамента</label>
-            <input asp-for="Number" class="form-control" placeholder="Добавете номер на апартамента...">
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label asp-for="Description">Описание</label>
-                    <input asp-for="Description" class="form-control" placeholder="Кратко описание на апартамента...">
+<div class="container mt-5">
+    <div class="col-lg-8 offset-2 text-center">
+        <h2 style="text-align:center">Добави Апартамент</h2>
+        <hr />
+        <form asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Number">Номер на апартамента</label>
+                        <input asp-for="Number" class="form-control" placeholder="Добавете номер на апартамента...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Floor">Етаж</label>
+                        <input asp-for="Floor" class="form-control" placeholder="Добавете етаж...">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label asp-for="Area">Площ</label>
-                    <input asp-for="Area" min="0.0" class="form-control"  placeholder="e.g 85.75">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Description">Описание</label>
+                        <input asp-for="Description" class="form-control" placeholder="Кратко описание на апартамента...">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Area">Площ</label>
+                        <input asp-for="Area" min="0.0" class="form-control" placeholder="e.g 85.75">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-lg-offset-5">
-                <div class="form-check-inline">
-                    <label asp-for="Building">Сграда</label>
-                    <label class="form-check-label">
-                        <input asp-for="Building" type="radio" class="form-check-input" value="А">A
-                    </label>
-                    <label class="form-check-label">
-                        <input asp-for="Building" type="radio" class="form-check-input" value="Б">Б
-                    </label>
-                    <label class="form-check-label">
-                        <input asp-for="Building" type="radio" class="form-check-input" value="В">В
-                    </label>
+            <div class="row text-center">
+                <div class="col-6 offset-3">
+                    <label asp-for="Building">Сграда :</label>
+                    <div class="form-check-inline">
+                        <label class="form-check-label left-padding">
+                            <input asp-for="Building" type="radio" class="form-check-input" value="А">A
+                        </label>
+                        <label class="form-check-label left-padding">
+                            <input asp-for="Building" type="radio" class="form-check-input" value="Б">Б
+                        </label>
+                        <label class="form-check-label left-padding">
+                            <input asp-for="Building" type="radio" class="form-check-input" value="В">В
+                        </label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6 text-center">
-                <button type="submit" class="btn btn-success center">Create</button>
+            <div class="row">
+                <div class="col-6 offset-3 text-center">
+                    <button type="submit" class="btn btn-success">Create</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

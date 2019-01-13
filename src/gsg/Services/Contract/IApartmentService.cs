@@ -8,5 +8,7 @@ namespace gsg.Services.Contract
         void Create(int number, string description, double area, Building building);
 
         List<Apartment> All();
+
+        List<Apartment> AllBySection(string section);
     }
 }

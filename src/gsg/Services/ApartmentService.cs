@@ -32,10 +32,9 @@ namespace gsg.Services
             context.SaveChanges();
         }
 
-        public List<Apartment> All()
-        {
-            var apartments = context.Apartments.ToList();
-            return apartments;
-        }
+        public List<Apartment> All() => context.Apartments.ToList();
+
+        public List<Apartment> AllBySection(string section) => context.Apartments
+            .Where(x => x.Building.ToString().ToLower() == section.ToLower()).ToList();
     }
 }

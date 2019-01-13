@@ -6,11 +6,13 @@ using gsg.Data;
 using gsg.Models;
 using gsg.Services;
 using gsg.Services.Contract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace gsg.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
 
@@ -46,6 +48,7 @@ namespace gsg.Controllers
             //TODO delete apartment from db 
             return this.RedirectToAction("All");
         }
+        [AllowAnonymous]
         public IActionResult All()
         {
             var list = apartments.All();
