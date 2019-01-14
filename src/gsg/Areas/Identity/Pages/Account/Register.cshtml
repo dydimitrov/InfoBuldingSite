@@ -1,7 +1,7 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Регистрация";
 }
 
 <div class="container mt-5">
@@ -9,7 +9,7 @@
         <div class="col-md-4 offset-4">
             <h2 class="text-center">@ViewData["Title"]</h2>
             <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                <h4>Create a new account.</h4>
+                <h4 class="text-center">Създайте нов профил</h4>
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group text-center">
