@@ -30,7 +30,7 @@ namespace gsg.Controllers
         [HttpPost]
         public IActionResult Create(Apartment model)
         {
-            this.apartments.Create(model.Number,model.Description,model.Area,model.Building);
+            this.apartments.Create(model.Number,model.Floor,model.Description,model.Area,model.Building);
             return RedirectToAction("All");
         }
         

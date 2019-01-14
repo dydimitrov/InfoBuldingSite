@@ -5,7 +5,7 @@ namespace gsg.Services.Contract
 {
     public interface IApartmentService
     {
-        void Create(int number, string description, double area, Building building);
+        void Create(int number, int floor, string description, double area, Building building);
 
         List<Apartment> All();
 

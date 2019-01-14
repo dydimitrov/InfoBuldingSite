@@ -17,12 +17,13 @@ namespace gsg.Services
             context = db;
         }
 
-        public void Create(int number, string description, double area, Building building)
+        public void Create(int number, int floor, string description, double area, Building building)
         {
             
             var apartment = new Apartment()
             {
                 Number = number,
+                Floor = floor,
                 Description = description,
                 Area = area,
                 Building = building
