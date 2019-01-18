@@ -37,5 +37,17 @@ namespace gsg.Services
 
         public List<Apartment> AllBySection(string section) => context.Apartments
             .Where(x => x.Building.ToString().ToLower() == section.ToLower()).ToList();
+
+        public void CreateRequest(string name, string email, string message)
+        {
+            var request = new Request()
+            {
+                Email = email,
+                Name = name,
+                Message = message
+            };
+            this.context.Requests.Add(request);
+            this.context.SaveChanges();
+        }
     }
 }

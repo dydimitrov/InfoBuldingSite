@@ -10,5 +10,7 @@ namespace gsg.Services.Contract
         List<Apartment> All();
 
         List<Apartment> AllBySection(string section);
+
+        void CreateRequest(string name, string email, string message);
     }
 }

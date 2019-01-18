@@ -36,13 +36,6 @@ namespace gsg.Controllers
         
 
         [HttpPost]
-        public IActionResult Edit(Apartment model)
-        {
-            //TODO add edited apartment to db 
-            return this.RedirectToAction("All");
-        }
-
-        [HttpPost]
         public IActionResult Delete(Apartment model)
         {
             //TODO delete apartment from db 

@@ -10,6 +10,7 @@ namespace gsg.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Apartment> Apartments { get; set; }
+        public DbSet<Request> Requests { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

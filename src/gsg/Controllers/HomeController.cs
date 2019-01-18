@@ -5,11 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using gsg.Models;
+using gsg.Services.Contract;
 
 namespace gsg.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IApartmentService _service;
+
+        public HomeController(IApartmentService service)
+        {
+            _service = service;
+        }
         public IActionResult Index()
         {
             return View();
@@ -22,12 +29,23 @@ namespace gsg.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            return View();
+        }
+        public IActionResult Contact(Request model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                this._service.CreateRequest(model.Name, model.Email,model.Message);
+            }
 
+            return this.RedirectToAction("Index", "Home");
+        }
+        public IActionResult Privacy()
+        {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult FinishedProjects()
         {
             return View();
         }
