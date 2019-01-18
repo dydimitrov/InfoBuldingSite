@@ -20,5 +20,11 @@ namespace gsg.Controllers
             var model = this.service.AllBySection(section);
             return View(model);
         }
+
+        public IActionResult AllGarages(string section)
+        {
+            var model = this.service.AllGaragesBySection(section);
+            return View(model);
+        }
     }
 }

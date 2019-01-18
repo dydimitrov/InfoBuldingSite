@@ -1,0 +1,54 @@
+﻿@model List<Garage>
+
+<div class="container mt-5">
+    <h2 class="text-center">Всички гаражи</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Номер</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Площ</th>
+            <th scope="col">Сграда</th>
+            <th scope="col">Етаж</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{ var counter = 1;}
+        @foreach (var garage in Model)
+        {
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@garage.Description</td>
+                <td>@garage.Number</td>
+                <td>@garage.Building</td>
+                <td>@garage.Floor</td>
+                @if (garage.IsSold)
+                {
+                    <td>Продаден</td>
+                }
+                else
+                {
+                    <td>Свободен</td>
+                }
+                @if (!garage.IsSold)
+                {
+                    <td>
+                        <form asp-action="SoldGarage" asp-route-id="@garage.Id" method="post"><button class="btn-group-xs btn-warning">Продаден</button></form>
+                        <form asp-action="DeleteGarage" asp-route-id="@garage.Id" method="post"><button class="btn-group-xs btn-danger">Изтрий</button></form>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <form asp-action="DeleteGarage" asp-route-id="@garage.Id" method="post"><button class="btn-group-xs btn-danger">Изтрий</button></form>
+                    </td>
+                }
+                </tr>
+            counter++;
+        }
+        </tbody>
+    </table>
+</div>

@@ -11,6 +11,7 @@ namespace gsg.Data
     {
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Request> Requests { get; set; }
+        public DbSet<Garage> Garages { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

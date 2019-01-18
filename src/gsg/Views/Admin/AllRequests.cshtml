@@ -1,0 +1,32 @@
+﻿@model List<Request>
+
+<div class="container mt-5">
+    <h2 class="text-center">Всички запитвания</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Име</th>
+                <th scope="col">Имейл</th>
+                <th scope="col">Съобщение</th>
+                <th scope="col">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        @{ var counter = 1;}
+        @foreach (var request in Model)
+        {
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@request.Name</td>
+                <td>@request.Email</td>
+                <td>@request.Message</td>
+                <td><form asp-controller="Admin" asp-action="DeleteRequest" asp-route-id="@request.Id" method="post"><button class="btn-group-xs btn-danger">Изтрий</button></form></td>
+            </tr>
+            counter++;
+        }
+        </tbody>
+    </table>
+</div>
+

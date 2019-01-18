@@ -37,11 +37,23 @@
                 }
                 @if (!apartment.IsSold)
                 {
-                    <td><button class="btn-group-xs btn-warning" asp-action="Edit">Продаден</button> <button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
+                    <td>
+
+                        <form asp-action="Sold" asp-route-id="@apartment.Id" method="post">
+                            <button class="btn-group-xs btn-warning">Продаден</button>
+                        </form>
+                        <form asp-action="Delete" asp-route-id="@apartment.Id" method="post">
+                            <button class="btn-group-xs btn-danger">Изтрий</button>
+                        </form>
+                    </td>
                 }
                 else
                 {
-                    <td><button class="btn-group-xs btn-danger" asp-action="Edit">Изтрий</button></td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@apartment.Id" method="post">
+                            <button class="btn-group-xs btn-danger">Изтрий</button>
+                        </form>
+                    </td>
                 }
             </tr>
             }

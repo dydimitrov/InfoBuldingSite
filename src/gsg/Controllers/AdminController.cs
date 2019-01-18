@@ -34,17 +34,69 @@ namespace gsg.Controllers
             return RedirectToAction("All");
         }
         
+        public IActionResult CreateGarage()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public IActionResult Delete(Apartment model)
+        public IActionResult CreateGarage(Garage model)
         {
-            //TODO delete apartment from db 
+            this.apartments.CreateGarage(model.Number,model.Floor,model.Description,model.Area,model.Building);
+            return RedirectToAction("AllGarages");
+        }
+
+        public IActionResult AllGarages()
+        {
+            var model = this.apartments.AllGarages();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Sold(int id)
+        {
+            this.apartments.Sold(id);
             return this.RedirectToAction("All");
         }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            this.apartments.Delete(id);
+            return this.RedirectToAction("All");
+        }
+
+        [HttpPost]
+        public IActionResult SoldGarage(int id)
+        {
+            this.apartments.SoldGarage(id);
+            return this.RedirectToAction("AllGarages");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteGarage(int id)
+        {
+            this.apartments.DeleteGarage(id);
+            return this.RedirectToAction("AllGarages");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteRequest(Guid id)
+        {
+            this.apartments.DeleteRequest(id);
+            return this.RedirectToAction("AllRequests");
+        }
+
         [AllowAnonymous]
         public IActionResult All()
         {
             var list = apartments.All();
+            return this.View(list);
+        }
+        
+        public IActionResult AllRequests()
+        {
+            var list = apartments.AllRequests();
             return this.View(list);
         }
     }
