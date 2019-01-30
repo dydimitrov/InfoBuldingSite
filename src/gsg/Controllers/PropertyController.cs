@@ -17,13 +17,13 @@ namespace gsg.Controllers
         }
         public IActionResult AllApartments(string section)
         {
-            var model = this.service.AllBySection(section);
+            var model = this.service.AllBySection(section).OrderBy(x => x.Number).ToList();
             return View(model);
         }
 
         public IActionResult AllGarages(string section)
         {
-            var model = this.service.AllGaragesBySection(section);
+            var model = this.service.AllGaragesBySection(section).OrderBy(x => x.Number).ToList();
             return View(model);
         }
     }

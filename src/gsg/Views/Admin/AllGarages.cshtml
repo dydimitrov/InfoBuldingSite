@@ -2,8 +2,7 @@
 
 <div class="container mt-5">
     <h2 class="text-center">Всички гаражи</h2>
-
-    <table class="table table-striped">
+    <table class="table table-striped" id="myTable">
         <thead>
         <tr>
             <th scope="col">Номер</th>
@@ -22,7 +21,7 @@
             <tr>
                 <th scope="row">@counter</th>
                 <td>@garage.Description</td>
-                <td>@garage.Number</td>
+                <td>@garage.Area кв.м.</td>
                 <td>@garage.Building</td>
                 <td>@garage.Floor</td>
                 @if (garage.IsSold)
@@ -46,7 +45,7 @@
                         <form asp-action="DeleteGarage" asp-route-id="@garage.Id" method="post"><button class="btn-group-xs btn-danger">Изтрий</button></form>
                     </td>
                 }
-                </tr>
+            </tr>
             counter++;
         }
         </tbody>

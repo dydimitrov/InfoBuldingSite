@@ -48,7 +48,7 @@ namespace gsg.Controllers
 
         public IActionResult AllGarages()
         {
-            var model = this.apartments.AllGarages();
+            var model = this.apartments.AllGarages().OrderBy(x => x.Number).ToList();
             return View(model);
         }
 
@@ -90,7 +90,7 @@ namespace gsg.Controllers
         [AllowAnonymous]
         public IActionResult All()
         {
-            var list = apartments.All();
+            var list = apartments.All().OrderBy(x => x.Number).ToList();
             return this.View(list);
         }
         
