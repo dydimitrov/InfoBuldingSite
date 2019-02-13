@@ -4,7 +4,6 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
                 <th>№ апартамент</th>
                 <th>Етаж</th>
                 <th>Описание</th>
@@ -15,25 +14,23 @@
         <tbody>
             @if (Model.Count != 0)
             {
-                var counter = 1;
-                foreach (var apartment in Model)
+                foreach (var apartment in Model.OrderBy(x => x.Number))
                 {
-            <tr>
-                <td>@counter</td>
-                <td>@apartment.Number</td>
-                <td>@apartment.Floor</td>
-                <td>@apartment.Description</td>
-                <td>@apartment.Area</td>
-                @if (apartment.IsSold)
-                {
-                    <td>Продаден</td>
-                }
-                else
-                {
-                    <td>Свободен</td>
-                }
-            </tr>
-                    counter++;
+                    var isSold = apartment.IsSold;
+                    <tr>
+                        <td>@apartment.Number</td>
+                        <td>@apartment.Floor</td>
+                        <td>@apartment.Description</td>
+                        <td>@apartment.Area</td>
+                        @if (isSold)
+                        {
+                            <td>Продаден</td>
+                        }
+                        else
+                        {
+                            <td>Свободен</td>
+                        }
+                    </tr>
                 }
             }
         </tbody>

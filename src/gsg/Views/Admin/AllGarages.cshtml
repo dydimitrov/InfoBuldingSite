@@ -15,11 +15,10 @@
         </tr>
         </thead>
         <tbody>
-        @{ var counter = 1;}
-        @foreach (var garage in Model)
+        @foreach (var garage in Model.OrderBy(x => x.Number))
         {
             <tr>
-                <th scope="row">@counter</th>
+                <th scope="row">@garage.Number</th>
                 <td>@garage.Description</td>
                 <td>@garage.Area кв.м.</td>
                 <td>@garage.Building</td>
@@ -46,7 +45,6 @@
                     </td>
                 }
             </tr>
-            counter++;
         }
         </tbody>
     </table>
