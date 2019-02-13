@@ -19,17 +19,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var apartment in Model)
-            {
+        @foreach (var apartment in Model.OrderBy(x => x.Number))
+        {
+
             <tr>
-                <th scope="row">1</th>
+                <th scope="row">@apartment.Number</th>
                 <td>@apartment.Description</td>
-                <td>@apartment.Number</td>
+                <td>@apartment.Area кв.м.</td>
                 <td>@apartment.Building</td>
                 <td>@apartment.Floor</td>
                 @if (apartment.IsSold)
                 {
-                    <td>Продаден</td>
+                    <td style="background-color: coral">Продаден</td>
                 }
                 else
                 {
@@ -56,7 +57,7 @@
                     </td>
                 }
             </tr>
-            }
+        }
         </tbody>
     </table>
 </div>

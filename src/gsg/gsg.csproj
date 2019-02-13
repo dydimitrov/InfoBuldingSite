@@ -3,9 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-gsg-211A4078-DBCA-4C0C-8FD0-8E558A3BDD48</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/118bb79a-d430-424b-b7e6-318f12d8d2d5/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/gsg</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/118bb79a-d430-424b-b7e6-318f12d8d2d5/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/gsg</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.1" />
@@ -39,6 +42,10 @@
     <None Include="wwwroot\js\jquery.imagemapster.min.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\js\site.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
