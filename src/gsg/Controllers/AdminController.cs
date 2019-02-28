@@ -60,6 +60,13 @@ namespace gsg.Controllers
         }
 
         [HttpPost]
+        public IActionResult SetFree(int id)
+        {
+            this.apartments.SetFree(id);
+            return this.RedirectToAction("All");
+        }
+
+        [HttpPost]
         public IActionResult Delete(int id)
         {
             this.apartments.Delete(id);

@@ -89,6 +89,13 @@ namespace gsg.Services
             this.context.SaveChanges();
         }
 
+        public void SetFree(int id)
+        {
+            var apartment = this.context.Apartments.FirstOrDefault(x => x.Id == id);
+            apartment.IsSold = false;
+
+            this.context.SaveChanges();
+        }
         public void Delete(int id)
         {
             var apartment = this.context.Apartments.FirstOrDefault(x => x.Id == id);
@@ -101,6 +108,14 @@ namespace gsg.Services
         {
             var garage = this.context.Garages.FirstOrDefault(x => x.Id == id);
             garage.IsSold = true;
+
+            this.context.SaveChanges();
+        }
+
+        public void SetFreeGarage(int id)
+        {
+            var garage = this.context.Garages.FirstOrDefault(x => x.Id == id);
+            garage.IsSold = false;
 
             this.context.SaveChanges();
         }

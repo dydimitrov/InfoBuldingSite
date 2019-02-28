@@ -41,6 +41,9 @@
                 else
                 {
                     <td>
+                        <form asp-action="SetFreeGarage" asp-route-id="@garage.Id" method="post">
+                            <button class="btn-group-xs btn-warning">Освободи</button>
+                        </form>
                         <form asp-action="DeleteGarage" asp-route-id="@garage.Id" method="post"><button class="btn-group-xs btn-danger">Изтрий</button></form>
                     </td>
                 }

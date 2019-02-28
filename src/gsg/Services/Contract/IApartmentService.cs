@@ -26,7 +26,11 @@ namespace gsg.Services.Contract
 
         void Sold(int id);
 
+        void SetFree(int id);
+
         void SoldGarage(int id);
+
+        void SetFreeGarage(int id);
 
         void Delete(int id);
 
